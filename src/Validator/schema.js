@@ -1,16 +1,14 @@
-// schema.js
-
 import { z } from "zod";
 
 export const formSchema = z
     .object({
         firstName: z
             .string()
-            .min(3, "First name is required"),
+            .min(3, "First name minimum length is 3"),
 
         lastName: z
             .string()
-            .min(3, "Last name is required"),
+            .min(3, "Last name is minimum length is 3"),
 
         dob: z
             .string()
@@ -41,12 +39,10 @@ export const formSchema = z
 
         cPassword: z
             .string(),
-    })
-
-    .refine(
+    }).refine(
         (data) => data.passWord === data.cPassword,
         {
             message: "Passwords do not match",
             path: ["cPassword"],
         }
-    );
+    );;
