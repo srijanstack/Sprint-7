@@ -1,7 +1,13 @@
 import Input from "./Input";
 import { Mail, Lock } from "lucide-react";
+import { useFormContext } from "react-hook-form";
 
 function StepTwo() {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
   return (
     <>
       <section className="p-4 border border-gray-300 bg-white rounded-lg flex flex-col items-start justify-around gap-3">
@@ -9,9 +15,13 @@ function StepTwo() {
         <Input
           Icon={Mail}
           name={"Email"}
-          id={"eMail"}
+          id={"email"}
           type={"email"}
           placeholder="Enter your email"
+          register={register("email", {
+            required: "Required",
+          })}
+          error={errors.email}
         />
 
         <Input
@@ -20,6 +30,10 @@ function StepTwo() {
           id={"passWord"}
           type={"Password"}
           placeholder="Enter password"
+          register={register("passWord", {
+            required: "Required",
+          })}
+          error={errors.passWord}
         />
 
         <Input
@@ -28,6 +42,8 @@ function StepTwo() {
           id={"cPassword"}
           type={"Password"}
           placeholder="Confirm Password"
+          register={register("cPassword")}
+          error={errors.cPassword}
         />
       </section>
     </>

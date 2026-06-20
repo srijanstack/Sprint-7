@@ -1,7 +1,12 @@
 import Input from "./Input";
 import { Calendar, User } from "lucide-react";
+import { useFormContext } from "react-hook-form";
 
 function StepOne() {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
   return (
     <>
       <section className="p-4 border border-gray-300 bg-white rounded-lg flex flex-col items-start justify-around gap-3">
@@ -12,6 +17,10 @@ function StepOne() {
           id={"firstName"}
           type={"text"}
           placeholder="Enter your first name"
+          register={register("firstName", {
+            required: "Required",
+          })}
+          error={errors.firstName}
         />
 
         <Input
@@ -20,6 +29,10 @@ function StepOne() {
           id={"lastName"}
           type={"text"}
           placeholder="Enter your last name"
+          register={register("firstName", {
+            required: "Required",
+          })}
+          error={errors.firstName}
         />
 
         <Input
@@ -28,6 +41,10 @@ function StepOne() {
           id={"dob"}
           type={"date"}
           placeholder="Enter your Dob"
+          register={register("firstName", {
+            required: "Required",
+          })}
+          error={errors.firstName}
         />
       </section>
     </>
