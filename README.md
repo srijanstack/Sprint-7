@@ -1,16 +1,103 @@
-# React + Vite
+# Sprint-7
+## This is an assignment for Prodesk IT internship
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# Multi-Step Form with React Hook Form & Zod
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Overview
 
-## React Compiler
+This project is a responsive three-step form built using React. It demonstrates form state management, schema-based validation, reusable components, and step-wise navigation using modern React practices.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The application prevents users from proceeding to the next step until all required fields in the current step are valid.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+### Step 1 - Basic Information
+
+* First Name
+* Last Name
+* Date of Birth
+
+Validation:
+
+* First Name must be at least 3 characters.
+* Last Name must be at least 3 characters.
+* Date of Birth is required.
+
+---
+
+### Step 2 - Account Details
+
+* Email Address
+* Password
+* Confirm Password
+
+Validation:
+
+* Valid email format required.
+* Password must:
+
+  * Be at least 8 characters long.
+  * Contain at least one uppercase letter.
+  * Contain at least one number.
+  * Contain at least one special character.
+* Confirm Password must match Password.
+
+Additional Features:
+
+* Show / Hide password toggle using an eye icon.
+* Validation messages displayed on blur.
+
+---
+
+### Step 3 - Review Details
+
+Displays all the information entered by the user before final submission.
+
+---
+
+## Technologies Used
+
+* React
+* React Hook Form
+* Zod
+* @hookform/resolvers
+* Tailwind CSS
+* Lucide React Icons
+
+---
+
+## Project Structure
+
+```text
+src/
+
+├── Components/
+│   ├── Header.jsx
+│   ├── Input.jsx
+│   ├── StepOne.jsx
+│   ├── StepTwo.jsx
+│   ├── StepThree.jsx
+│   └── FormNavigation.jsx
+│
+├── Validator/
+│   └── schema.js
+│
+├──Services/
+|    └── form.js
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## Preview
+
+![Preview1](/Preview/Screenshot%202026-06-20%20143339.png)
+![Preview2](/Preview/Screenshot%202026-06-20%20143356.png)
+![Preview3](/Preview/Screenshot%202026-06-20%20143407.png)
+
+
