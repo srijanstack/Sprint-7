@@ -28,7 +28,7 @@ function StepTwo() {
           Icon={Lock}
           name={"Password"}
           id={"passWord"}
-          type={"Password"}
+          type={"password"}
           placeholder="Enter password"
           register={register("passWord", {
             required: "Required",
@@ -40,7 +40,7 @@ function StepTwo() {
           Icon={Lock}
           name={"Confirm Password"}
           id={"cPassword"}
-          type={"Password"}
+          type={"password"}
           placeholder="Confirm Password"
           register={register("cPassword")}
           error={errors.cPassword}

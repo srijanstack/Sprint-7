@@ -29,10 +29,10 @@ function StepOne() {
           id={"lastName"}
           type={"text"}
           placeholder="Enter your last name"
-          register={register("firstName", {
+          register={register("lastName", {
             required: "Required",
           })}
-          error={errors.firstName}
+          error={errors.lastName}
         />
 
         <Input
@@ -41,10 +41,10 @@ function StepOne() {
           id={"dob"}
           type={"date"}
           placeholder="Enter your Dob"
-          register={register("firstName", {
+          register={register("dob", {
             required: "Required",
           })}
-          error={errors.firstName}
+          error={errors.dob}
         />
       </section>
     </>
